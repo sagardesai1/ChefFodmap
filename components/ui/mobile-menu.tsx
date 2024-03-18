@@ -75,6 +75,12 @@ export default function MobileMenu() {
                 </svg>
               </Link>
             </li>
+            <li>
+              <Link href="/signin" className="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center" onClick={() => setMobileNavOpen(false)}>Pricing</Link>
+            </li>
+            <li>
+              <Link href="/signin" className="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center" onClick={() => setMobileNavOpen(false)}>FAQ</Link>
+            </li>
           </ul>          
         </Transition>
       </div>
