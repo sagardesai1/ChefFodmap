@@ -1,11 +1,52 @@
-export const metadata = {
-  title: 'Sign Up - Simple',
-  description: 'Page description',
-}
+'use client'
 
-import Link from 'next/link'
+import { signUp } from 'aws-amplify/auth';
+import Link from 'next/link';
+import React, { FormEvent } from 'react';
+import { useRouter } from 'next/navigation';
+import { Amplify } from 'aws-amplify';
+import config from '../../amplifyconfiguration.json';
+Amplify.configure(config);
 
 export default function SignUp() {
+  const router = useRouter();
+  type SignUpParameters = {
+    username: string;
+    password: string;
+    name: string;
+  };
+
+  async function handleSignUp({
+    username,
+    password,
+    name,
+  }: SignUpParameters) {
+    try {
+      const { isSignUpComplete, userId, nextStep } = await signUp({
+        username,
+        password,
+        options: {
+          userAttributes: {
+            name,
+          },
+          // optional
+          autoSignIn: true // or SignInOptions e.g { authFlowType: "USER_SRP_AUTH" }
+        }
+      });
+
+      if (nextStep.signUpStep === "CONFIRM_SIGN_UP") {
+        // Redirect user to a success page or any other desired destination
+        router.push(`/confirm-signup?username=${username}`);
+      } else {
+        // Handle other scenarios if needed
+      }
+
+      
+    } catch (error) {
+      console.log('error signing up:', error);
+    }
+  }
+
   return (
     <section className="bg-gradient-to-b from-gray-100 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -18,7 +59,19 @@ export default function SignUp() {
 
           {/* Form */}
           <div className="max-w-sm mx-auto">
-            <form>
+            <form onSubmit={(e: FormEvent<HTMLFormElement>) => {
+              e.preventDefault();
+              const target = e.target as HTMLFormElement;
+              const username = target.elements.namedItem('username') as HTMLInputElement;
+              const name = target.elements.namedItem('name') as HTMLInputElement;
+              const password = target.elements.namedItem('password') as HTMLInputElement;
+
+              handleSignUp({
+                username: username.value,
+                name: name.value,
+                password: password.value
+              });
+            }}>
               <div className="flex flex-wrap -mx-3 mb-4">
                 <div className="w-full px-3">
                   <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="name">Name <span className="text-red-600">*</span></label>
@@ -27,8 +80,8 @@ export default function SignUp() {
               </div>
               <div className="flex flex-wrap -mx-3 mb-4">
                 <div className="w-full px-3">
-                  <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="email">Email <span className="text-red-600">*</span></label>
-                  <input id="email" type="email" className="form-input w-full text-gray-800" placeholder="Enter your email address" required />
+                  <label className="block text-gray-800 text-sm font-medium mb-1" htmlFor="username">Email <span className="text-red-600">*</span></label>
+                  <input id="username" type="username" className="form-input w-full text-gray-800" placeholder="Enter your email address" required />
                 </div>
               </div>
               <div className="flex flex-wrap -mx-3 mb-4">
@@ -39,7 +92,7 @@ export default function SignUp() {
               </div>
               <div className="flex flex-wrap -mx-3 mt-6">
                 <div className="w-full px-3">
-                  <button className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Sign up</button>
+                  <button type="submit" className="btn text-white bg-green-600 hover:bg-green-700 w-full">Sign up</button>
                 </div>
               </div>
               <div className="text-sm text-gray-500 text-center mt-3">
@@ -51,7 +104,7 @@ export default function SignUp() {
               <div className="text-gray-600 italic">Or</div>
               <div className="border-t border-gray-300 grow ml-3" aria-hidden="true"></div>
             </div>
-            <form>
+            {/* <form>
               <div className="flex flex-wrap -mx-3 mb-3">
                 <div className="w-full px-3">
                   <button className="btn px-0 text-white bg-gray-900 hover:bg-gray-800 w-full relative flex items-center">
@@ -72,7 +125,7 @@ export default function SignUp() {
                   </button>
                 </div>
               </div>
-            </form>
+            </form> */}
             <div className="text-gray-600 text-center mt-6">
               Already using Simple? <Link href="/signin" className="text-blue-600 hover:underline transition duration-150 ease-in-out">Sign in</Link>
             </div>

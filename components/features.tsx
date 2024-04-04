@@ -33,7 +33,7 @@ export default function Features() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h1 className="h2 mb-4">Explore the solutions</h1>
-            <p className="text-xl text-gray-600">Chef Fodmap provides wide varieties of features and benefits designed to help your fodmap recipe game.</p>
+            <p className="text-xl text-gray-600">Chef Fodmap provides wide varieties of features and benefits designed to help your FODMAP recipe game.</p>
           </div>
 
           {/* Section content */}

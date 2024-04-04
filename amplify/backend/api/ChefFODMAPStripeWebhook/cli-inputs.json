@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/cheffodmap-stripe-webhook": {
+      "name": "/cheffodmap-stripe-webhook",
+      "lambdaFunction": "ChefFodmapStripeWebhook",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

@@ -3,153 +3,180 @@
 import { useState } from 'react'
 
 export default function Pricing() {
-    const [yearly, setYearly] = useState<boolean>(true)
-    const [isAnnual, setIsAnnual] = useState<boolean>(true)
-
+    const [yearly, setYearly] = useState<boolean>(false)
     return (
         <section className="bg-white dark:bg-gray-900">
             <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                 <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-                    <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Designed for business teams like yours</h2>
-                    <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+                    <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Pricing plans for teams of all sizes</h2>
+                    <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">Choose an affordable plan that’s packed with the best features for your needs. Cancel at anytime.</p>
                 </div>
-                <div className="flex justify-center max-w-[14rem] m-auto mb-8 lg:mb-16">
-                <div className="relative flex w-full p-1 bg-white dark:bg-slate-900 rounded-full border border-gray-100 shadow dark:border-gray-600">
-                    <span className="absolute inset-0 m-1 pointer-events-none" aria-hidden="true">
-                        <span className={`absolute inset-0 w-1/2 bg-indigo-500 rounded-full shadow-sm shadow-indigo-950/10 transform transition-transform duration-150 ease-in-out ${yearly ? 'translate-x-0' : 'translate-x-full'}`}></span>
-                    </span>
-                    <button
-                        className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${yearly ? 'text-white' : 'text-slate-500 dark:text-slate-400'}`}
-                        onClick={() => setYearly(true)}
-                        aria-pressed={isAnnual}
-                    >
-                        Monthly
-                    </button>
-                    <button
-                        className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${yearly ? 'text-slate-500 dark:text-slate-400' : 'text-white'}`}
-                        onClick={() => setYearly(false)}
-                        aria-pressed={isAnnual}
-                    >
-                        Yearly <span className={`${yearly ? 'text-indigo-200' : 'text-slate-400 dark:text-slate-500'}`}>-20%</span>
-                    </button>
-                </div>
-            </div>
-                <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
-                    {/* Pricing Card */}
-                    <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-                        <h3 className="mb-4 text-2xl font-semibold">Starter</h3>
-                        <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">Best option for personal use & for your next project.</p>
-                        <div className="flex justify-center items-baseline my-8">
-                            <span className="mr-2 text-5xl font-extrabold">$29</span>
-                            <span className="text-gray-500 dark:text-gray-400">/month</span>
-                        </div>
-                        {/* List */}
-                        <ul role="list" className="mb-8 space-y-4 text-left">
-                            <li className="flex items-center space-x-3">
-                                {/* Icon */}
-                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                <span>Individual configuration</span>
-                            </li>
-                            <li className="flex items-center space-x-3">
-                                {/* Icon */}
-                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                <span>No setup, or hidden fees</span>
-                            </li>
-                            <li className="flex items-center space-x-3">
-                                {/* Icon */}
-                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                <span>Team size: <span className="font-semibold">1 developer</span></span>
-                            </li>
-                            <li className="flex items-center space-x-3">
-                                {/* Icon */}
-                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                <span>Premium support: <span className="font-semibold">6 months</span></span>
-                            </li>
-                            <li className="flex items-center space-x-3">
-                                {/* Icon */}
-                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                <span>Free updates: <span className="font-semibold">6 months</span></span>
-                            </li>
-                        </ul>
-                        <a href="#" className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">Get started</a>
-                    </div>
-                    {/* Pricing Card */}
-                    <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-                        <h3 className="mb-4 text-2xl font-semibold">Company</h3>
-                        <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">Relevant for multiple users, extended & premium support.</p>
-                        <div className="flex justify-center items-baseline my-8">
-                            <span className="mr-2 text-5xl font-extrabold">$99</span>
-                            <span className="text-gray-500 dark:text-gray-400">/month</span>
-                        </div>
-                        {/* List */}
-                        <ul role="list" className="mb-8 space-y-4 text-left">
-                            <li className="flex items-center space-x-3">
-                                {/* Icon */}
-                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                <span>Individual configuration</span>
-                            </li>
-                            <li className="flex items-center space-x-3">
-                                {/* Icon */}
-                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                <span>No setup, or hidden fees</span>
-                            </li>
-                            <li className="flex items-center space-x-3">
-                                {/* Icon */}
-                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                <span>Team size: <span className="font-semibold">10 developers</span></span>
-                            </li>
-                            <li className="flex items-center space-x-3">
-                                {/* Icon */}
-                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                <span>Premium support: <span className="font-semibold">24 months</span></span>
-                            </li>
-                            <li className="flex items-center space-x-3">
-                                {/* Icon */}
-                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                <span>Free updates: <span className="font-semibold">24 months</span></span>
-                            </li>
-                        </ul>
-                        <a href="#" className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">Get started</a>
-                    </div>
-                    {/* Pricing Card */}
-                    <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-                        <h3 className="mb-4 text-2xl font-semibold">Enterprise</h3>
-                        <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">Best for large scale uses and extended redistribution rights.</p>
-                        <div className="flex justify-center items-baseline my-8">
-                            <span className="mr-2 text-5xl font-extrabold">$499</span>
-                            <span className="text-gray-500 dark:text-gray-400">/month</span>
-                        </div>
-                        {/* List */}
-                        <ul role="list" className="mb-8 space-y-4 text-left">
-                            <li className="flex items-center space-x-3">
-                                {/* Icon */}
-                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                <span>Individual configuration</span>
-                            </li>
-                            <li className="flex items-center space-x-3">
-                                {/* Icon */}
-                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                <span>No setup, or hidden fees</span>
-                            </li>
-                            <li className="flex items-center space-x-3">
-                                {/* Icon */}
-                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                <span>Team size: <span className="font-semibold">100+ developers</span></span>
-                            </li>
-                            <li className="flex items-center space-x-3">
-                                {/* Icon */}
-                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                <span>Premium support: <span className="font-semibold">36 months</span></span>
-                            </li>
-                            <li className="flex items-center space-x-3">
-                                {/* Icon */}
-                                <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                <span>Free updates: <span className="font-semibold">36 months</span></span>
-                            </li>
-                        </ul>
-                        <a href="#" className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">Get started</a>
+                <div className="flex justify-center max-w-[12rem] m-auto mb-8 lg:mb-10">
+                    <div className="relative flex w-full p-1 bg-white dark:bg-slate-900 rounded-full border border-gray-200 dark:border-gray-600">
+                        <span className="absolute inset-0 m-1 pointer-events-none">
+                            <span className={`absolute inset-0 w-1/2 bg-green-500 rounded-full shadow-sm shadow-indigo-950/10 transform transition-transform duration-150 ease-in-out ${yearly ? 'translate-x-full' : 'translate-x-0'}`}></span>
+                        </span>
+                        <button
+                            className={`relative flex-1 text-sm font-semibold h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${yearly ? 'text-slate-500 dark:text-slate-400' : 'text-white'}`}
+                            onClick={() => setYearly(false)}
+                        >
+                            Monthly
+                        </button>
+                        <button
+                            className={`relative flex-1 text-sm font-semibold h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${yearly ? 'text-white' : 'text-slate-500 dark:text-slate-400'}`}
+                            onClick={() => setYearly(true)}
+                        >
+                            Yearly -20%<span className={`${yearly ? 'text-indigo-200' : 'text-slate-400 dark:text-slate-500'}`}></span>
+                        </button>
                     </div>
                 </div>
+                {!yearly ? (
+                    <div className="space-y-8 lg:grid lg:grid-cols-2 sm:gap-6 xl:gap-0 lg:space-y-0 mx-20">
+                        {/* Pricing Card */}
+                        <div className="flex flex-col p-6 mx-auto max-w-sm text-gray-900 bg-white rounded-2xl border border-gray-200 dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                            <h3 className="mb-4 text-xl font-semibold">Essential</h3>
+                            <p className="font-light text-gray-500 sm:text-md dark:text-gray-400">Get Started with Low FODMAP Cooking.</p>
+                            <div className="flex justify-center items-baseline my-8">
+                                <span className="mr-2 text-5xl font-extrabold">$2</span>
+                                <span className="text-gray-500 dark:text-gray-400">/month</span>
+                            </div>
+                            {/* List */}
+                            <ul role="list" className="mb-8 space-y-4 text-left">
+                                <li className="flex items-center space-x-3">
+                                    {/* Icon */}
+                                    <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                    <span>Access to meal types</span>
+                                </li>
+                                <li className="flex items-center space-x-3">
+                                    {/* Icon */}
+                                    <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                    <span>Choose preferred ingredients</span>
+                                </li>
+                                <li className="flex items-center space-x-3">
+                                    {/* Icon */}
+                                    <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                    <span>Exclude unwanted ingredients</span>
+                                </li>
+                                <li className="flex items-center space-x-3">
+                                    {/* Icon */}
+                                    <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                    <span>Enjoy up to <span className="font-semibold">50 recipes</span> monthly</span>
+                                </li>
+                            </ul>
+                            <a href="#" className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">Get started</a>
+                        </div>
+                        {/* Pricing Card */}
+                        <div className="flex flex-col p-6 mx-auto max-w-sm text-center text-gray-900 bg-white rounded-2xl border-2 border-green-500 dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                            <div className="flex flex-row justify-between items-center">
+                                <h3 className="mb-4 text-xl font-semibold text-green-500">Premium</h3>
+                                <h3 className="mb-4 text-sm font-semibold text-green-500 bg-green-100 rounded-full px-3 py-1.5">Most popular</h3>
+                            </div>
+                            <p className="font-light text-gray-500 sm:text-md dark:text-gray-400">Unlock Unlimited Low FODMAP Recipes.</p>
+                            <div className="flex justify-center items-baseline my-8">
+                                <span className="mr-2 text-5xl font-extrabold">$5</span>
+                                <span className="text-gray-500 dark:text-gray-400">/year</span>
+                            </div>
+                            {/* List */}
+                            <ul role="list" className="mb-8 space-y-4 text-left">
+                                <li className="flex items-center space-x-3">
+                                    {/* Icon */}
+                                    <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                    <span>Access to meal types</span>
+                                </li>
+                                <li className="flex items-center space-x-3">
+                                    {/* Icon */}
+                                    <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                    <span>Choose preferred ingredients</span>
+                                </li>
+                                <li className="flex items-center space-x-3">
+                                    {/* Icon */}
+                                    <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                    <span>Exclude unwanted ingredients</span>
+                                </li>
+                                <li className="flex items-center space-x-3">
+                                    {/* Icon */}
+                                    <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                    <span>Enjoy <span className="font-semibold">unlimited</span> monthly</span>
+                                </li>
+                            </ul>
+                            <a href="#" className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">Get started</a>
+                        </div>
+
+                    </div>
+                ) : (
+                    <div className="space-y-8 lg:grid lg:grid-cols-2 sm:gap-6 xl:gap-0 lg:space-y-0 mx-20">
+                        {/* Pricing Card */}
+                        <div className="flex flex-col p-6 mx-auto max-w-sm text-gray-900 bg-white rounded-2xl border border-gray-200 dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                            <h3 className="mb-4 text-xl font-semibold">Essential</h3>
+                            <p className="font-light text-gray-500 sm:text-md dark:text-gray-400">Get Started with Low FODMAP Cooking.</p>
+                            <div className="flex justify-center items-baseline my-8">
+                                <span className="mr-2 text-5xl font-extrabold">$21</span>
+                                <span className="text-gray-500 dark:text-gray-400">/year</span>
+                            </div>
+                            {/* List */}
+                            <ul role="list" className="mb-8 space-y-4 text-left">
+                                <li className="flex items-center space-x-3">
+                                    {/* Icon */}
+                                    <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                    <span>Access to meal types</span>
+                                </li>
+                                <li className="flex items-center space-x-3">
+                                    {/* Icon */}
+                                    <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                    <span>Choose preferred ingredients</span>
+                                </li>
+                                <li className="flex items-center space-x-3">
+                                    {/* Icon */}
+                                    <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                    <span>Exclude unwanted ingredients</span>
+                                </li>
+                                <li className="flex items-center space-x-3">
+                                    {/* Icon */}
+                                    <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                    <span>Enjoy up to <span className="font-semibold">50 recipes</span> monthly</span>
+                                </li>
+                            </ul>
+                            <a href="#" className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">Get started</a>
+                        </div>
+                        {/* Pricing Card */}
+                        <div className="flex flex-col p-6 mx-auto max-w-sm text-center text-gray-900 bg-white rounded-2xl border-2 border-green-500 dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+                            <div className="flex flex-row justify-between items-center">
+                                <h3 className="mb-4 text-xl font-semibold text-green-500">Premium</h3>
+                                <h3 className="mb-4 text-sm font-semibold text-green-500 bg-green-100 rounded-full px-3 py-1.5">Most popular</h3>
+                            </div>
+                            <p className="font-light text-gray-500 sm:text-md dark:text-gray-400">Unlock Unlimited Low FODMAP Recipes.</p>
+                            <div className="flex justify-center items-baseline my-8">
+                                <span className="mr-2 text-5xl font-extrabold">$48</span>
+                                <span className="text-gray-500 dark:text-gray-400">/month</span>
+                            </div>
+                            {/* List */}
+                            <ul role="list" className="mb-8 space-y-4 text-left">
+                                <li className="flex items-center space-x-3">
+                                    {/* Icon */}
+                                    <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                    <span>Access to meal types</span>
+                                </li>
+                                <li className="flex items-center space-x-3">
+                                    {/* Icon */}
+                                    <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                    <span>Choose preferred ingredients</span>
+                                </li>
+                                <li className="flex items-center space-x-3">
+                                    {/* Icon */}
+                                    <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                    <span>Exclude unwanted ingredients</span>
+                                </li>
+                                <li className="flex items-center space-x-3">
+                                    {/* Icon */}
+                                    <svg className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                    <span>Enjoy <span className="font-semibold">unlimited</span> monthly</span>
+                                </li>
+                            </ul>
+                            <a href="#" className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-primary-900">Get started</a>
+                        </div>
+
+                    </div>
+                )}
             </div>
         </section>
     )
