@@ -40,6 +40,7 @@ next-env.d.ts
 
 # amplify
 .amplify
+amplifyconfiguration*
 
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend
